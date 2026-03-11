@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Backend Portfolio CMS</title>
+<link rel="stylesheet" href="style.css">
+<style>
+/* Basic dark-mode Bento Grid CSS */
+body {
+    margin: 0;
+    font-family: monospace;
+    background-color: #121212;
+    color: #cfcfcf;
+}
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        "about skills"
+        "projects projects"
+        "logs contact";
+    grid-gap: 15px;
+    padding: 20px;
+}
+.panel {
+    background-color: #1c1c1c;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px #000;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.panel:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px #333;
+}
+#about { grid-area: about; }
+#skills { grid-area: skills; }
+#projects { grid-area: projects; }
+#logs { grid-area: logs; }
+#contact { grid-area: contact; }
+
+/* Typing cursor */
+.cursor {
+    display: inline-block;
+    width: 10px;
+    background-color: #cfcfcf;
+    margin-left: 2px;
+    animation: blink 1s infinite;
+}
+@keyframes blink { 0%,50%,100% { opacity:1 } 25%,75% { opacity:0 } }
+
+/* Editable styling for CMS */
+.editable {
+    background-color: #222;
+    padding: 5px;
+    border-radius: 4px;
+    outline: none;
+}
+</style>
+</head>
+<body>
+
+<div class="grid-container">
+    <!-- About Panel -->
+    <div id="about" class="panel">
+        <h2>About Me <span class="cursor"></span></h2>
+        <div contenteditable="true" class="editable" id="about-text">
+            Hello! I am a Backend Developer specializing in APIs and server-side logic.
+        </div>
+    </div>
+
+    <!-- Skills Panel -->
+    <div id="skills" class="panel">
+        <h2>Skills</h2>
+        <ul id="skills-list" contenteditable="true" class="editable">
+            <li>Node.js</li>
+            <li>C#</li>
+            <li>SQL</li>
+            <li>Docker</li>
+        </ul>
+    </div>
+
+    <!-- Projects Panel -->
+    <div id="projects" class="panel">
+        <h2>Projects</h2>
+        <div id="projects-list" contenteditable="true" class="editable">
+            <div class="project-card">
+                <strong>Project 1</strong> - API development using Node.js
+            </div>
+            <div class="project-card">
+                <strong>Project 2</strong> - Database optimization scripts
+            </div>
+        </div>
+    </div>
+
+    <!-- System Logs Panel -->
+    <div id="logs" class="panel">
+        <h2>System Logs</h2>
+        <pre id="logs-content" class="editable" contenteditable="true">
+[INFO] Initializing services...
+[INFO] Connecting to database...
+[INFO] Loading API modules...
+[SYSTEM READY]
+        </pre>
+    </div>
+
+    <!-- Contact Panel -->
+    <div id="contact" class="panel">
+        <h2>Contact</h2>
+        <div id="contact-info" contenteditable="true" class="editable">
+            Email: you@example.com<br>
+            GitHub: github.com/username<br>
+            LinkedIn: linkedin.com/in/username
+        </div>
+    </div>
+</div>
+
+<script>
+const cursor = document.querySelector('.cursor');
+let show = true;
+setInterval(() => { cursor.style.opacity = show ? '1' : '0'; show = !show; }, 500);
+
+function getCMSData() {
+    return {
+        about: document.getElementById('about-text').innerText,
+        skills: Array.from(document.getElementById('skills-list').children).map(li => li.innerText),
+        projects: document.getElementById('projects-list').innerText,
+        logs: document.getElementById('logs-content').innerText,
+        contact: document.getElementById('contact-info').innerText
+    };
+}
+
+setInterval(() => {
+    console.log(getCMSData());
+}, 5000);
+</script>
+
+</body>
+</html>
