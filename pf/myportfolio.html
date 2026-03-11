@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Backend Developer Console</title>
+    <link rel="stylesheet" href="myportfolio.css" />
+  </head>
+  <body>
+    <main>
+      <!-- Header -->
+      <header>
+        <div class="header-content">
+          <div class="logo">&gt; backend_dev</div>
+          <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#logs">Logs</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Bento Grid -->
+      <div class="bento-grid">
+        <!-- About Panel -->
+        <div class="panel" id="about">
+          <div>
+            <div class="panel-header">[ ABOUT ]</div>
+            <div class="panel-title">Jimmuel D. Sanggayan</div>
+            <div class="role-badge">Backend Developer</div>
+            <div class="intro-text">
+              <span>Building</span> <span>scalable</span> <span>APIs</span>
+              <span>and</span> <span>systems.</span>
+              <span class="cursor"></span>
+            </div>
+          </div>
+          <div class="panel-footer">$ status: active</div>
+        </div>
+
+        <!-- Skills: Languages -->
+        <div class="panel" id="skills">
+          <div class="panel-header">[ LANGUAGES ]</div>
+          <div class="panel-content">
+            <div class="skill-item">
+              <span class="skill-name">C#</span>
+              <span class="skill-dots"></span>
+              <span class="skill-status">ACTIVE</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">VB.NET</span>
+              <span class="skill-dots"></span>
+              <span class="skill-status">ACTIVE</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">MongoDB</span>
+              <span class="skill-dots"></span>
+              <span class="skill-status">ACTIVE</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">SQL</span>
+              <span class="skill-dots"></span>
+              <span class="skill-status">ACTIVE</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skills: Frameworks -->
+        <div class="panel">
+          <div class="panel-header">[ FRAMEWORKS ]</div>
+          <div class="panel-content">
+            <div class="skill-item">
+              <span class="skill-name">ASP.NET</span>
+              <span class="skill-dots"></span>
+              <span class="skill-status">ONLINE</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">WINFORM</span>
+              <span class="skill-dots"></span>
+              <span class="skill-status">ONLINE</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">VUE.JS</span>
+              <span class="skill-dots"></span>
+              <span class="skill-status">ONLINE</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skills: Tools -->
+        <div class="panel">
+          <div class="panel-header">[ TOOLS ]</div>
+          <div class="panel-content">
+            <div class="skill-item">
+              <span class="skill-name">Github</span>
+              <span class="skill-dots"></span>
+              <span class="skill-status">ONLINE</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Git</span>
+              <span class="skill-dots"></span>
+              <span class="skill-status">ONLINE</span>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Google</span>
+              <span class="skill-dots"></span>
+              <span class="skill-status">ONLINE</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Projects Panel -->
+        <div class="panel" id="projects">
+          <div class="panel-header">[ PROJECTS ]</div>
+          <div class="panel-content">
+            <div class="project-item">
+              <div class="project-name">SmartCodeLab</div>
+              <div class="project-desc">
+                Desktop IDE for Laboratory Activity
+              </div>
+              <div class="project-tech">C# • Winform</div>
+              <a
+                href="https://github.com/Heavenly-Potato-Cult/2025-CP_SMARTCODELAB"
+                class="project-link"
+                >view code</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- System Logs Panel -->
+        <div class="panel" id="logs">
+          <div class="panel-header">[ SYSTEM LOGS ]</div>
+          <div class="panel-content">
+            <div class="log-line">
+              <span class="log-timestamp">[12:45:23]</span>
+              <span class="log-message">Initializing services…</span>
+            </div>
+            <div class="log-line">
+              <span class="log-timestamp">[12:45:24]</span>
+              <span class="log-message">Connecting to database…</span>
+            </div>
+            <div class="log-line">
+              <span class="log-timestamp">[12:45:25]</span>
+              <span class="log-message">Loading API modules…</span>
+            </div>
+            <div class="log-line">
+              <span class="log-timestamp">[12:45:26]</span>
+              <span class="log-message">Running migrations…</span>
+            </div>
+            <div class="log-line">
+              <span class="log-timestamp">[12:45:27]</span>
+              <span class="log-status">✓</span>
+              <span class="log-message">System ready</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Panel -->
+        <div class="panel" id="contact">
+          <div class="panel-header">[ CONTACT ]</div>
+          <div class="panel-content">
+            <button class="contact-button" onclick="toggleContact(0)">
+              $ email
+            </button>
+            <div class="contact-output" id="contact0">
+              jimmuelsanggayan@gmail.com
+            </div>
+
+            <button class="contact-button" onclick="toggleContact(1)">
+              $ github
+            </button>
+            <div class="contact-output" id="contact1">
+              github.com/StagnantPotato
+            </div>
+
+            <button class="contact-button" onclick="toggleContact(2)">
+              $ linkedin
+            </button>
+            <div class="contact-output" id="contact2">
+              www.linkedin.com/in/jimmuel-sanggayan-381a5833a/
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer>[END_OF_TRANSMISSION] © 2026 Backend Developer Console</footer>
+    </main>
+
+    <script src="myportfolio.js"></script>
+  </body>
+</html>
